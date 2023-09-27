@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  jupyterserver:
+    image: jupyterserver
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 8888:8888
+    volumes:
+    # map this to where you want your persistant volume
+      - .:/home/jon/jupyter
